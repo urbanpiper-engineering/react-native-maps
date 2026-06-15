@@ -23,6 +23,7 @@ DerivedData
 project.xcworkspace
 Pods/
 AirMapsExplorer.xcworkspace/
+**/.xcode.env.local
 
 # Android/IntelliJ
 #
@@ -31,6 +32,10 @@ build/
 .gradle
 local.properties
 *.iml
+*.hprof
+.cxx/
+*.keystore
+!debug.keystore
 
 # node.js
 #
@@ -38,8 +43,48 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
 # Bundle artifact
 *.jsbundle
 
 # VSCode workspace settings
 .vscode
+
+# ts outDir
+# NOTE: lib/ (built JS+types) is intentionally committed in this UrbanPiper fork
+# because it is consumed via git+ssh (not npm publish), so the build output must
+# be present in the repo. Run `yarn build` and commit lib/ after source changes.
+# lib/
+
+example/vendor/bundle/
+
+example/ios/Config.xcconfig
+
+# Ruby / CocoaPods
+**/Pods/
+/vendor/bundle/
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+
+# testing
+/coverage
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
